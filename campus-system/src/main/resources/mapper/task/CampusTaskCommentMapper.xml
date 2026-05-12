@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.campus.system.mapper.task.CampusTaskCommentMapper">
+
+    <resultMap type="com.campus.system.domain.vo.CampusTaskCommentVo" id="CampusTaskCommentVoResult">
+        <id property="commentId" column="comment_id" />
+        <result property="taskId" column="task_id" />
+        <result property="commentUserId" column="comment_user_id" />
+        <result property="replyUserId" column="reply_user_id" />
+        <result property="commentContent" column="comment_content" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+        <result property="commentUserName" column="comment_user_name" />
+        <result property="commentUserAvatar" column="comment_user_avatar" />
+        <result property="replyUserName" column="reply_user_name" />
+    </resultMap>
+
+    <sql id="selectCampusTaskCommentVo">
+        select c.comment_id, c.task_id, c.comment_user_id, c.reply_user_id, c.comment_content,
+               c.create_by, c.create_time, c.update_by, c.update_time, c.remark,
+               cu.nick_name as comment_user_name, cu.avatar as comment_user_avatar,
+               ru.nick_name as reply_user_name
+        from campus_task_comment c
+        left join sys_user cu on c.comment_user_id = cu.user_id
+        left join sys_user ru on c.reply_user_id = ru.user_id
+    </sql>
+
+    <select id="selectCampusTaskCommentList" parameterType="Long" resultMap="CampusTaskCommentVoResult">
+        <include refid="selectCampusTaskCommentVo"/>
+        where c.del_flag = '0' and c.task_id = #{taskId}
+        order by c.create_time asc
+    </select>
+
+    <insert id="insertCampusTaskComment" parameterType="com.campus.system.domain.task.CampusTaskComment" useGeneratedKeys="true" keyProperty="commentId">
+        insert into campus_task_comment (
+            task_id, comment_user_id, reply_user_id, comment_content,
+            create_by, create_time, remark
+        ) values (
+            #{taskId}, #{commentUserId}, #{replyUserId}, #{commentContent},
+            #{createBy}, sysdate(), #{remark}
+        )
+    </insert>
+
+    <update id="deleteCampusTaskCommentById" parameterType="Long">
+        update campus_task_comment set del_flag = '2' where comment_id = #{commentId}
+    </update>
+
+    <update id="deleteCampusTaskCommentByTaskIds">
+        update campus_task_comment set del_flag = '2' where task_id in
+        <foreach item="taskId" collection="array" open="(" separator="," close=")">#{taskId}</foreach>
+    </update>
+
+    <select id="countCampusTaskCommentByTaskId" parameterType="Long" resultType="int">
+        select count(*) from campus_task_comment where del_flag = '0' and task_id = #{taskId}
+    </select>
+
+</mapper>

@@ -1,0 +1,39 @@
+2026-05-08T16:51:17.367+08:00  INFO 13800 --- [  restartedMain] com.campus.Application                   : Starting Application using Java 21.0.10 with PID 13800 (C:\Users\19092\Desktop\CampusCollaboration\campus-admin\target\classes started by 19092 in C:\Users\19092\Desktop\CampusCollaboration)
+2026-05-08T16:51:17.370+08:00  INFO 13800 --- [  restartedMain] com.campus.Application                   : The following 1 profile is active: "druid"
+2026-05-08T16:51:19.904+08:00  INFO 13800 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-08T16:51:19.905+08:00  INFO 13800 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2026-05-08T16:51:19.953+08:00  INFO 13800 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-08T16:51:21.167+08:00  INFO 13800 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-05-08T16:51:23.513+08:00  INFO 13800 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2026-05-08T16:51:23.526+08:00  INFO 13800 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-08T16:51:23.527+08:00  INFO 13800 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2026-05-08T16:51:23.527+08:00  INFO 13800 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2026-05-08T16:51:23.528+08:00  INFO 13800 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-08T16:51:23.528+08:00  INFO 13800 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-08T16:51:23.528+08:00  INFO 13800 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2026-05-08T16:51:23.528+08:00  INFO 13800 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4c140f27
+2026-05-08T16:51:24.853+08:00  INFO 13800 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-08T16:51:24.859+08:00  INFO 13800 --- [  restartedMain] com.campus.Application                   : Started Application in 8.065 seconds (process running for 8.929)
+2026-05-08T16:51:24.862+08:00  INFO 13800 --- [  restartedMain] com.campus.Application                   : CrazyLee started successfully. Local: http://localhost:8080
+2026-05-08T16:52:38.532+08:00  INFO 13800 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-08T16:52:48.256+08:00  INFO 13800 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[admin][Success][登录成功]
+2026-05-08T16:52:48.600+08:00  INFO 13800 --- [schedule-pool-0] n.b.parse.useragent.utils.YauaaVersion   : Yauaa 7.32.0 (v7.32.0 @ 2025-10-11T16:29:46Z)
+2026-05-08T16:52:48.907+08:00  INFO 13800 --- [schedule-pool-0] n.b.parse.useragent.config.ConfigLoader  : - Loaded 119 files in  293 ms using expression: classpath*:UserAgents/**/*.yaml
+2026-05-08T16:52:51.486+08:00  INFO 13800 --- [schedule-pool-0] n.b.p.u.a.UserAgentStringMatchMaker      : Building all needed matchers for the requested 11 fields.
+2026-05-08T16:52:51.570+08:00  INFO 13800 --- [nio-8080-exec-1] n.b.p.u.a.UserAgentStringMatchMaker      : Initializing Analyzer data structures
+2026-05-08T16:52:53.676+08:00  INFO 13800 --- [nio-8080-exec-1] n.b.p.u.a.UserAgentStringMatchMaker      : Built in 2105 msec : Hashmap 197922, Ranges map:2964
+2026-05-08T16:54:33.290+08:00  INFO 13800 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[admin][Logout][退出成功]
+2026-05-08T16:54:38.473+08:00  INFO 13800 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-08T16:54:38.492+08:00  INFO 13800 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-08T16:54:38.492+08:00  INFO 13800 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-08T16:54:38.492+08:00  INFO 13800 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-08T16:54:38.492+08:00  INFO 13800 --- [ionShutdownHook] sys-user                                 : ====关闭后台任务任务线程池====
+2026-05-08T16:54:38.494+08:00  INFO 13800 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2026-05-08T16:54:38.498+08:00  INFO 13800 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

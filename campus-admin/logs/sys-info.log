@@ -1,0 +1,49 @@
+2026-04-12T23:28:59.367+08:00  INFO 30000 --- [  restartedMain] com.campus.Application                   : Starting Application using Java 21.0.9 with PID 30000 (C:\01kj\TbCompleted\2026\校园协同工作平台\CampusCollaboration\campus-admin\target\classes started by crazyLee in C:\01kj\TbCompleted\2026\校园协同工作平台\CampusCollaboration\campus-admin)
+2026-04-12T23:28:59.372+08:00  INFO 30000 --- [  restartedMain] com.campus.Application                   : The following 1 profile is active: "druid"
+2026-04-12T23:29:01.510+08:00  INFO 30000 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-12T23:29:01.512+08:00  INFO 30000 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2026-04-12T23:29:01.571+08:00  INFO 30000 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-12T23:29:02.600+08:00  INFO 30000 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-04-12T23:29:02.603+08:00  INFO 30000 --- [reate-776567899] c.a.druid.pool.DruidAbstractDataSource   : {dataSource-1} failContinuous is true
+2026-04-12T23:29:02.618+08:00  INFO 30000 --- [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-04-12T23:31:07.108+08:00  INFO 21624 --- [  restartedMain] com.campus.Application                   : Starting Application using Java 21.0.9 with PID 21624 (C:\01kj\TbCompleted\2026\校园协同工作平台\CampusCollaboration\campus-admin\target\classes started by crazyLee in C:\01kj\TbCompleted\2026\校园协同工作平台\CampusCollaboration\campus-admin)
+2026-04-12T23:31:07.110+08:00  INFO 21624 --- [  restartedMain] com.campus.Application                   : The following 1 profile is active: "druid"
+2026-04-12T23:31:08.984+08:00  INFO 21624 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-12T23:31:08.984+08:00  INFO 21624 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2026-04-12T23:31:09.029+08:00  INFO 21624 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-12T23:31:10.430+08:00  INFO 21624 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-04-12T23:31:12.702+08:00  INFO 21624 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2026-04-12T23:31:12.708+08:00  INFO 21624 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2026-04-12T23:31:12.725+08:00  INFO 21624 --- [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-04-12T23:33:37.015+08:00  INFO 32964 --- [  restartedMain] com.campus.Application                   : Starting Application using Java 21.0.9 with PID 32964 (C:\01kj\TbCompleted\2026\校园协同工作平台\CampusCollaboration\campus-admin\target\classes started by crazyLee in C:\01kj\TbCompleted\2026\校园协同工作平台\CampusCollaboration\campus-admin)
+2026-04-12T23:33:37.018+08:00  INFO 32964 --- [  restartedMain] com.campus.Application                   : The following 1 profile is active: "druid"
+2026-04-12T23:33:38.886+08:00  INFO 32964 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-12T23:33:38.886+08:00  INFO 32964 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2026-04-12T23:33:38.929+08:00  INFO 32964 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-12T23:33:40.038+08:00  INFO 32964 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-04-12T23:33:43.348+08:00  INFO 32964 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2026-04-12T23:33:43.362+08:00  INFO 32964 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-04-12T23:33:43.363+08:00  INFO 32964 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2026-04-12T23:33:43.363+08:00  INFO 32964 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2026-04-12T23:33:43.364+08:00  INFO 32964 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-04-12T23:33:43.364+08:00  INFO 32964 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-04-12T23:33:43.364+08:00  INFO 32964 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2026-04-12T23:33:43.364+08:00  INFO 32964 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@543e6b7c
+2026-04-12T23:33:44.717+08:00  INFO 32964 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-04-12T23:33:44.724+08:00  INFO 32964 --- [  restartedMain] com.campus.Application                   : Started Application in 8.196 seconds (process running for 8.559)
+2026-04-12T23:33:44.756+08:00  INFO 32964 --- [  restartedMain] com.campus.Application                   : CrazyLee started successfully. Local: http://localhost:8080
+2026-04-12T23:35:18.323+08:00  INFO 32964 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-12T23:37:00.301+08:00  INFO 32964 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[admin][Error][验证码已失效]
+2026-04-12T23:37:00.386+08:00  INFO 32964 --- [schedule-pool-0] n.b.parse.useragent.utils.YauaaVersion   : Yauaa 7.32.0 (v7.32.0 @ 2025-10-11T16:29:46Z)
+2026-04-12T23:37:00.502+08:00  INFO 32964 --- [schedule-pool-0] n.b.parse.useragent.config.ConfigLoader  : - Loaded 119 files in  109 ms using expression: classpath*:UserAgents/**/*.yaml
+2026-04-12T23:37:01.418+08:00  INFO 32964 --- [schedule-pool-0] n.b.p.u.a.UserAgentStringMatchMaker      : Building all needed matchers for the requested 11 fields.
+2026-04-12T23:37:01.452+08:00  INFO 32964 --- [schedule-pool-0] n.b.p.u.a.UserAgentStringMatchMaker      : Initializing Analyzer data structures
+2026-04-12T23:37:02.154+08:00  INFO 32964 --- [schedule-pool-0] n.b.p.u.a.UserAgentStringMatchMaker      : Built in 702 msec : Hashmap 197922, Ranges map:2964
+2026-04-12T23:39:17.969+08:00  INFO 32964 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[admin][Error][验证码已失效]

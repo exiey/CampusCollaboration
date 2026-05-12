@@ -1,0 +1,7 @@
+2026-05-05T16:43:09.992+08:00  INFO 39524 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-05T16:43:10.018+08:00  INFO 39524 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-05T16:43:10.018+08:00  INFO 39524 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-05T16:43:10.018+08:00  INFO 39524 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-05T16:43:10.019+08:00  INFO 39524 --- [ionShutdownHook] sys-user                                 : ====关闭后台任务任务线程池====
+2026-05-05T16:43:10.024+08:00  INFO 39524 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2026-05-05T16:43:10.026+08:00  INFO 39524 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

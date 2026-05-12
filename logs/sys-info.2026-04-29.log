@@ -1,0 +1,32 @@
+2026-04-29T08:16:22.592+08:00  INFO 8896 --- [  restartedMain] com.campus.Application                   : Starting Application using Java 21.0.10 with PID 8896 (C:\Users\19092\Desktop\CampusCollaboration\campus-admin\target\classes started by 19092 in C:\Users\19092\Desktop\CampusCollaboration)
+2026-04-29T08:16:22.597+08:00  INFO 8896 --- [  restartedMain] com.campus.Application                   : The following 1 profile is active: "druid"
+2026-04-29T08:16:24.575+08:00  INFO 8896 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-29T08:16:24.576+08:00  INFO 8896 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2026-04-29T08:16:24.627+08:00  INFO 8896 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-29T08:16:25.711+08:00  INFO 8896 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-04-29T08:16:27.838+08:00  INFO 8896 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2026-04-29T08:16:27.847+08:00  INFO 8896 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-04-29T08:16:27.848+08:00  INFO 8896 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2026-04-29T08:16:27.849+08:00  INFO 8896 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2026-04-29T08:16:27.849+08:00  INFO 8896 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-04-29T08:16:27.850+08:00  INFO 8896 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-04-29T08:16:27.850+08:00  INFO 8896 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2026-04-29T08:16:27.850+08:00  INFO 8896 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@565a52d0
+2026-04-29T08:16:29.057+08:00  INFO 8896 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-04-29T08:16:29.062+08:00  INFO 8896 --- [  restartedMain] com.campus.Application                   : Started Application in 6.941 seconds (process running for 7.534)
+2026-04-29T08:16:29.065+08:00  INFO 8896 --- [  restartedMain] com.campus.Application                   : CrazyLee started successfully. Local: http://localhost:8080
+2026-04-29T08:18:20.397+08:00  INFO 8896 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-29T08:19:18.577+08:00  INFO 8896 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-04-29T08:19:18.605+08:00  INFO 8896 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-04-29T08:19:18.605+08:00  INFO 8896 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-04-29T08:19:18.605+08:00  INFO 8896 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-04-29T08:19:18.605+08:00  INFO 8896 --- [ionShutdownHook] sys-user                                 : ====关闭后台任务任务线程池====
+2026-04-29T08:19:18.610+08:00  INFO 8896 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2026-04-29T08:19:18.615+08:00  INFO 8896 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.campus.system.mapper.file.CampusSharedFileMapper">
+
+    <resultMap type="com.campus.system.domain.vo.CampusSharedFileVo" id="CampusSharedFileVoResult">
+        <id property="fileId" column="file_id" />
+        <result property="fileName" column="file_name" />
+        <result property="originalName" column="original_name" />
+        <result property="fileUrl" column="file_url" />
+        <result property="filePath" column="file_path" />
+        <result property="fileSuffix" column="file_suffix" />
+        <result property="fileSize" column="file_size" />
+        <result property="fileCategory" column="file_category" />
+        <result property="accessScope" column="access_scope" />
+        <result property="uploadUserId" column="upload_user_id" />
+        <result property="downloadCount" column="download_count" />
+        <result property="status" column="status" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+        <result property="uploadUserName" column="upload_user_name" />
+        <result property="uploadDeptName" column="upload_dept_name" />
+    </resultMap>
+
+    <sql id="selectCampusSharedFileVo">
+        select f.file_id, f.file_name, f.original_name, f.file_url, f.file_path,
+               f.file_suffix, f.file_size, f.file_category, f.access_scope,
+               f.upload_user_id, f.download_count, f.status,
+               f.create_by, f.create_time, f.update_by, f.update_time, f.remark,
+               u.nick_name as upload_user_name, d.dept_name as upload_dept_name
+        from campus_shared_file f
+        left join sys_user u on f.upload_user_id = u.user_id
+        left join sys_dept d on u.dept_id = d.dept_id
+    </sql>
+
+    <select id="selectCampusSharedFileList" parameterType="com.campus.system.domain.file.CampusSharedFile" resultMap="CampusSharedFileVoResult">
+        <include refid="selectCampusSharedFileVo"/>
+        where f.del_flag = '0'
+        <if test="fileName != null and fileName != ''">AND f.file_name like concat('%', #{fileName}, '%')</if>
+        <if test="fileCategory != null and fileCategory != ''">AND f.file_category = #{fileCategory}</if>
+        <if test="accessScope != null and accessScope != ''">AND f.access_scope = #{accessScope}</if>
+        <if test="uploadUserId != null">AND f.upload_user_id = #{uploadUserId}</if>
+        <if test="status != null and status != ''">AND f.status = #{status}</if>
+        <if test="fileSuffix != null and fileSuffix != ''">AND f.file_suffix = #{fileSuffix}</if>
+        <if test="params.beginTime != null and params.beginTime != ''">
+            AND date_format(f.create_time,'%Y%m%d') &gt;= date_format(#{params.beginTime},'%Y%m%d')
+        </if>
+        <if test="params.endTime != null and params.endTime != ''">
+            AND date_format(f.create_time,'%Y%m%d') &lt;= date_format(#{params.endTime},'%Y%m%d')
+        </if>
+        order by f.create_time desc
+    </select>
+
+    <select id="selectCampusSharedFilePage" resultMap="CampusSharedFileVoResult">
+        <include refid="selectCampusSharedFileVo"/>
+        where f.del_flag = '0'
+        <if test="file.fileName != null and file.fileName != ''">AND f.file_name like concat('%', #{file.fileName}, '%')</if>
+        <if test="file.fileCategory != null and file.fileCategory != ''">AND f.file_category = #{file.fileCategory}</if>
+        <if test="file.accessScope != null and file.accessScope != ''">AND f.access_scope = #{file.accessScope}</if>
+        <if test="file.uploadUserId != null">AND f.upload_user_id = #{file.uploadUserId}</if>
+        <if test="file.status != null and file.status != ''">AND f.status = #{file.status}</if>
+        <if test="file.fileSuffix != null and file.fileSuffix != ''">AND f.file_suffix = #{file.fileSuffix}</if>
+        <if test="file.params.beginTime != null and file.params.beginTime != ''">
+            AND date_format(f.create_time,'%Y%m%d') &gt;= date_format(#{file.params.beginTime},'%Y%m%d')
+        </if>
+        <if test="file.params.endTime != null and file.params.endTime != ''">
+            AND date_format(f.create_time,'%Y%m%d') &lt;= date_format(#{file.params.endTime},'%Y%m%d')
+        </if>
+        order by f.create_time desc
+    </select>
+
+    <select id="selectCampusSharedFileById" parameterType="Long" resultMap="CampusSharedFileVoResult">
+        <include refid="selectCampusSharedFileVo"/>
+        where f.del_flag = '0' and f.file_id = #{fileId}
+    </select>
+
+    <insert id="insertCampusSharedFile" parameterType="com.campus.system.domain.file.CampusSharedFile" useGeneratedKeys="true" keyProperty="fileId">
+        insert into campus_shared_file (
+            file_name, original_name, file_url, file_path, file_suffix, file_size,
+            file_category, access_scope, upload_user_id, status,
+            create_by, create_time, remark
+        ) values (
+            #{fileName}, #{originalName}, #{fileUrl}, #{filePath}, #{fileSuffix}, #{fileSize},
+            #{fileCategory}, #{accessScope}, #{uploadUserId}, #{status},
+            #{createBy}, sysdate(), #{remark}
+        )
+    </insert>
+
+    <update id="updateCampusSharedFile" parameterType="com.campus.system.domain.file.CampusSharedFile">
+        update campus_shared_file
+        <set>
+            <if test="fileName != null and fileName != ''">file_name = #{fileName},</if>
+            <if test="originalName != null and originalName != ''">original_name = #{originalName},</if>
+            <if test="fileUrl != null">file_url = #{fileUrl},</if>
+            <if test="filePath != null">file_path = #{filePath},</if>
+            <if test="fileSuffix != null and fileSuffix != ''">file_suffix = #{fileSuffix},</if>
+            <if test="fileSize != null">file_size = #{fileSize},</if>
+            <if test="fileCategory != null and fileCategory != ''">file_category = #{fileCategory},</if>
+            <if test="accessScope != null and accessScope != ''">access_scope = #{accessScope},</if>
+            <if test="status != null and status != ''">status = #{status},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            update_by = #{updateBy},
+            update_time = sysdate()
+        </set>
+        where file_id = #{fileId}
+    </update>
+
+    <update id="deleteCampusSharedFileByIds">
+        update campus_shared_file set del_flag = '2' where file_id in
+        <foreach item="fileId" collection="array" open="(" separator="," close=")">#{fileId}</foreach>
+    </update>
+
+    <update id="updateCampusSharedFileDownloadCount" parameterType="Long">
+        update campus_shared_file set download_count = download_count + 1 where file_id = #{fileId}
+    </update>
+
+</mapper>

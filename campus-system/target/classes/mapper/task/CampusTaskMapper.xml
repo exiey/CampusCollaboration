@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.campus.system.mapper.task.CampusTaskMapper">
+
+    <resultMap type="com.campus.system.domain.vo.CampusTaskVo" id="CampusTaskVoResult">
+        <id property="taskId" column="task_id" />
+        <result property="taskTitle" column="task_title" />
+        <result property="taskContent" column="task_content" />
+        <result property="publishUserId" column="publish_user_id" />
+        <result property="receiveUserId" column="receive_user_id" />
+        <result property="priority" column="priority" />
+        <result property="taskStatus" column="task_status" />
+        <result property="progressPercent" column="progress_percent" />
+        <result property="startTime" column="start_time" />
+        <result property="deadlineTime" column="deadline_time" />
+        <result property="finishTime" column="finish_time" />
+        <result property="attachmentName" column="attachment_name" />
+        <result property="attachmentUrl" column="attachment_url" />
+        <result property="commentCount" column="comment_count" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+        <result property="publishUserName" column="publish_user_name" />
+        <result property="publishDeptName" column="publish_dept_name" />
+        <result property="receiveUserName" column="receive_user_name" />
+        <result property="receiveDeptName" column="receive_dept_name" />
+    </resultMap>
+
+    <sql id="selectCampusTaskVo">
+        select t.task_id, t.task_title, t.task_content, t.publish_user_id, t.receive_user_id,
+               t.priority, t.task_status, t.progress_percent, t.start_time, t.deadline_time,
+               t.finish_time, t.attachment_name, t.attachment_url, t.comment_count,
+               t.create_by, t.create_time, t.update_by, t.update_time, t.remark,
+               pu.nick_name as publish_user_name, pd.dept_name as publish_dept_name,
+               ru.nick_name as receive_user_name, rd.dept_name as receive_dept_name
+        from campus_task t
+        left join sys_user pu on t.publish_user_id = pu.user_id
+        left join sys_dept pd on pu.dept_id = pd.dept_id
+        left join sys_user ru on t.receive_user_id = ru.user_id
+        left join sys_dept rd on ru.dept_id = rd.dept_id
+    </sql>
+
+    <select id="selectCampusTaskList" parameterType="com.campus.system.domain.task.CampusTask" resultMap="CampusTaskVoResult">
+        <include refid="selectCampusTaskVo"/>
+        where t.del_flag = '0'
+        <if test="taskTitle != null and taskTitle != ''">AND t.task_title like concat('%', #{taskTitle}, '%')</if>
+        <if test="publishUserId != null">AND t.publish_user_id = #{publishUserId}</if>
+        <if test="receiveUserId != null">AND t.receive_user_id = #{receiveUserId}</if>
+        <if test="priority != null and priority != ''">AND t.priority = #{priority}</if>
+        <if test="taskStatus != null and taskStatus != ''">AND t.task_status = #{taskStatus}</if>
+        <if test="params.beginTime != null and params.beginTime != ''">
+            AND date_format(t.create_time,'%Y%m%d') &gt;= date_format(#{params.beginTime},'%Y%m%d')
+        </if>
+        <if test="params.endTime != null and params.endTime != ''">
+            AND date_format(t.create_time,'%Y%m%d') &lt;= date_format(#{params.endTime},'%Y%m%d')
+        </if>
+        order by t.create_time desc
+    </select>
+
+    <select id="selectCampusTaskPage" resultMap="CampusTaskVoResult">
+        <include refid="selectCampusTaskVo"/>
+        where t.del_flag = '0'
+        <if test="task.taskTitle != null and task.taskTitle != ''">AND t.task_title like concat('%', #{task.taskTitle}, '%')</if>
+        <if test="task.publishUserId != null">AND t.publish_user_id = #{task.publishUserId}</if>
+        <if test="task.receiveUserId != null">AND t.receive_user_id = #{task.receiveUserId}</if>
+        <if test="task.priority != null and task.priority != ''">AND t.priority = #{task.priority}</if>
+        <if test="task.taskStatus != null and task.taskStatus != ''">AND t.task_status = #{task.taskStatus}</if>
+        <if test="task.params.beginTime != null and task.params.beginTime != ''">
+            AND date_format(t.create_time,'%Y%m%d') &gt;= date_format(#{task.params.beginTime},'%Y%m%d')
+        </if>
+        <if test="task.params.endTime != null and task.params.endTime != ''">
+            AND date_format(t.create_time,'%Y%m%d') &lt;= date_format(#{task.params.endTime},'%Y%m%d')
+        </if>
+        order by t.create_time desc
+    </select>
+
+    <select id="selectCampusTaskById" parameterType="Long" resultMap="CampusTaskVoResult">
+        <include refid="selectCampusTaskVo"/>
+        where t.del_flag = '0' and t.task_id = #{taskId}
+    </select>
+
+    <insert id="insertCampusTask" parameterType="com.campus.system.domain.task.CampusTask" useGeneratedKeys="true" keyProperty="taskId">
+        insert into campus_task (
+            task_title, task_content, publish_user_id, receive_user_id, priority,
+            task_status, progress_percent, start_time, deadline_time,
+            attachment_name, attachment_url, create_by, create_time, remark
+        ) values (
+            #{taskTitle}, #{taskContent}, #{publishUserId}, #{receiveUserId}, #{priority},
+            #{taskStatus}, #{progressPercent}, #{startTime}, #{deadlineTime},
+            #{attachmentName}, #{attachmentUrl}, #{createBy}, sysdate(), #{remark}
+        )
+    </insert>
+
+    <update id="updateCampusTask" parameterType="com.campus.system.domain.task.CampusTask">
+        update campus_task
+        <set>
+            <if test="taskTitle != null and taskTitle != ''">task_title = #{taskTitle},</if>
+            <if test="taskContent != null">task_content = #{taskContent},</if>
+            <if test="receiveUserId != null">receive_user_id = #{receiveUserId},</if>
+            <if test="priority != null and priority != ''">priority = #{priority},</if>
+            <if test="taskStatus != null and taskStatus != ''">task_status = #{taskStatus},</if>
+            <if test="progressPercent != null">progress_percent = #{progressPercent},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="deadlineTime != null">deadline_time = #{deadlineTime},</if>
+            <if test="finishTime != null">finish_time = #{finishTime},</if>
+            <if test="attachmentName != null">attachment_name = #{attachmentName},</if>
+            <if test="attachmentUrl != null">attachment_url = #{attachmentUrl},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            update_by = #{updateBy},
+            update_time = sysdate()
+        </set>
+        where task_id = #{taskId}
+    </update>
+
+    <update id="deleteCampusTaskByIds">
+        update campus_task set del_flag = '2' where task_id in
+        <foreach item="taskId" collection="array" open="(" separator="," close=")">#{taskId}</foreach>
+    </update>
+
+    <update id="updateCampusTaskStatus" parameterType="com.campus.system.domain.task.CampusTask">
+        update campus_task
+        <set>
+            task_status = #{taskStatus},
+            <if test="progressPercent != null">progress_percent = #{progressPercent},</if>
+            <if test="finishTime != null">finish_time = #{finishTime},</if>
+            update_by = #{updateBy},
+            update_time = sysdate()
+        </set>
+        where task_id = #{taskId}
+    </update>
+
+    <update id="updateCampusTaskCommentCount">
+        update campus_task set comment_count = #{commentCount} where task_id = #{taskId}
+    </update>
+
+</mapper>

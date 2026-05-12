@@ -1,0 +1,97 @@
+2025-12-12T17:16:59.209+08:00  INFO 10888 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Starting RuoYiApplication using Java 21.0.9 with PID 10888 (C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin\target\classes started by crazyLee in C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin)
+2025-12-12T17:16:59.215+08:00  INFO 10888 --- [  restartedMain] com.ruoyi.RuoYiApplication               : The following 1 profile is active: "druid"
+2025-12-12T17:17:01.586+08:00  INFO 10888 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-12T17:17:01.587+08:00  INFO 10888 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-12T17:17:01.645+08:00  INFO 10888 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-12T17:17:02.908+08:00  INFO 10888 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-12-12T17:17:05.038+08:00  INFO 10888 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-12-12T17:17:05.047+08:00  INFO 10888 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-12T17:17:05.048+08:00  INFO 10888 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2025-12-12T17:17:05.049+08:00  INFO 10888 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-12-12T17:17:05.050+08:00  INFO 10888 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-12T17:17:05.050+08:00  INFO 10888 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-12T17:17:05.051+08:00  INFO 10888 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2025-12-12T17:17:05.051+08:00  INFO 10888 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@21973224
+2025-12-12T17:17:06.191+08:00  INFO 10888 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-12T17:17:06.198+08:00  INFO 10888 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Started RuoYiApplication in 7.642 seconds (process running for 8.145)
+2025-12-12T18:40:26.346+08:00  INFO 26468 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Starting RuoYiApplication using Java 21.0.9 with PID 26468 (C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin\target\classes started by crazyLee in C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin)
+2025-12-12T18:40:26.348+08:00  INFO 26468 --- [  restartedMain] com.ruoyi.RuoYiApplication               : The following 1 profile is active: "druid"
+2025-12-12T18:40:28.478+08:00  INFO 26468 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-12T18:40:28.479+08:00  INFO 26468 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-12T18:40:28.539+08:00  INFO 26468 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-12T18:40:29.708+08:00  INFO 26468 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-12-12T18:40:31.549+08:00  INFO 26468 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-12-12T18:40:31.559+08:00  INFO 26468 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-12T18:40:31.560+08:00  INFO 26468 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2025-12-12T18:40:31.561+08:00  INFO 26468 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-12-12T18:40:31.562+08:00  INFO 26468 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-12T18:40:31.562+08:00  INFO 26468 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-12T18:40:31.562+08:00  INFO 26468 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2025-12-12T18:40:31.562+08:00  INFO 26468 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5b923ebf
+2025-12-12T18:40:32.752+08:00  INFO 26468 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-12T18:40:32.759+08:00  INFO 26468 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Started RuoYiApplication in 6.891 seconds (process running for 7.287)
+2025-12-12T18:58:37.280+08:00  INFO 19520 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Starting RuoYiApplication using Java 21.0.9 with PID 19520 (C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin\target\classes started by crazyLee in C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin)
+2025-12-12T18:58:37.281+08:00  INFO 19520 --- [  restartedMain] com.ruoyi.RuoYiApplication               : The following 1 profile is active: "druid"
+2025-12-12T18:58:39.393+08:00  INFO 19520 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-12T18:58:39.394+08:00  INFO 19520 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-12T18:58:39.437+08:00  INFO 19520 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-12T18:58:40.452+08:00  INFO 19520 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-12-12T18:58:42.318+08:00  INFO 19520 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-12-12T18:58:42.332+08:00  INFO 19520 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-12T18:58:42.334+08:00  INFO 19520 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2025-12-12T18:58:42.335+08:00  INFO 19520 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-12-12T18:58:42.336+08:00  INFO 19520 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-12T18:58:42.337+08:00  INFO 19520 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-12T18:58:42.337+08:00  INFO 19520 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2025-12-12T18:58:42.337+08:00  INFO 19520 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@72d8202f
+2025-12-12T18:58:43.975+08:00  INFO 19520 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-12T18:58:43.986+08:00  INFO 19520 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Started RuoYiApplication in 7.192 seconds (process running for 7.616)
+2025-12-12T19:00:38.588+08:00  INFO 19520 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-12T19:01:10.917+08:00  INFO 19520 --- [nio-8080-exec-4] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [Hm_lvt_9ba8fc809b5584167a2fb9b31bb3970c=1763623377,1763894888,1763896621,1763948242;] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2025-12-12T19:05:12.543+08:00  INFO 19520 --- [io-8080-exec-16] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 888 ms
+2025-12-12T19:07:53.665+08:00  INFO 28992 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Starting RuoYiApplication using Java 21.0.9 with PID 28992 (C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin\target\classes started by crazyLee in C:\01kj\工具包\RuoYi-Vue-springboot3\RuoYi-Vue-springboot3\ruoyi-admin)
+2025-12-12T19:07:53.667+08:00  INFO 28992 --- [  restartedMain] com.ruoyi.RuoYiApplication               : The following 1 profile is active: "druid"
+2025-12-12T19:07:55.797+08:00  INFO 28992 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-12T19:07:55.797+08:00  INFO 28992 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-12T19:07:55.845+08:00  INFO 28992 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-12T19:07:56.924+08:00  INFO 28992 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-12-12T19:07:59.070+08:00  INFO 28992 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-12-12T19:07:59.078+08:00  INFO 28992 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-12-12T19:07:59.080+08:00  INFO 28992 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2025-12-12T19:07:59.081+08:00  INFO 28992 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-12-12T19:07:59.081+08:00  INFO 28992 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-12-12T19:07:59.082+08:00  INFO 28992 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-12-12T19:07:59.082+08:00  INFO 28992 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2025-12-12T19:07:59.083+08:00  INFO 28992 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1d57fe6b
+2025-12-12T19:08:00.225+08:00  INFO 28992 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-12-12T19:08:00.233+08:00  INFO 28992 --- [  restartedMain] com.ruoyi.RuoYiApplication               : Started RuoYiApplication in 7.072 seconds (process running for 7.577)
+2025-12-12T19:08:13.578+08:00  INFO 28992 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'

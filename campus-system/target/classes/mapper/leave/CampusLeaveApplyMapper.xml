@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.campus.system.mapper.leave.CampusLeaveApplyMapper">
+
+    <resultMap type="com.campus.system.domain.vo.CampusLeaveApplyVo" id="CampusLeaveApplyVoResult">
+        <id property="leaveId" column="leave_id" />
+        <result property="applicantUserId" column="applicant_user_id" />
+        <result property="approverUserId" column="approver_user_id" />
+        <result property="leaveType" column="leave_type" />
+        <result property="leaveTitle" column="leave_title" />
+        <result property="leaveReason" column="leave_reason" />
+        <result property="startTime" column="start_time" />
+        <result property="endTime" column="end_time" />
+        <result property="leaveDays" column="leave_days" />
+        <result property="leaveStatus" column="leave_status" />
+        <result property="contactPhone" column="contact_phone" />
+        <result property="auditRemark" column="audit_remark" />
+        <result property="auditTime" column="audit_time" />
+        <result property="revokeTime" column="revoke_time" />
+        <result property="createBy" column="create_by" />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy" column="update_by" />
+        <result property="updateTime" column="update_time" />
+        <result property="remark" column="remark" />
+        <result property="applicantUserName" column="applicant_user_name" />
+        <result property="applicantDeptName" column="applicant_dept_name" />
+        <result property="approverUserName" column="approver_user_name" />
+    </resultMap>
+
+    <sql id="selectCampusLeaveApplyVo">
+        select l.leave_id, l.applicant_user_id, l.approver_user_id, l.leave_type,
+               l.leave_title, l.leave_reason, l.start_time, l.end_time, l.leave_days,
+               l.leave_status, l.contact_phone, l.audit_remark, l.audit_time, l.revoke_time,
+               l.create_by, l.create_time, l.update_by, l.update_time, l.remark,
+               au.nick_name as applicant_user_name, ad.dept_name as applicant_dept_name,
+               pu.nick_name as approver_user_name
+        from campus_leave_apply l
+        left join sys_user au on l.applicant_user_id = au.user_id
+        left join sys_dept ad on au.dept_id = ad.dept_id
+        left join sys_user pu on l.approver_user_id = pu.user_id
+    </sql>
+
+    <select id="selectCampusLeaveApplyList" parameterType="com.campus.system.domain.leave.CampusLeaveApply" resultMap="CampusLeaveApplyVoResult">
+        <include refid="selectCampusLeaveApplyVo"/>
+        where l.del_flag = '0'
+        <if test="applicantUserId != null">AND l.applicant_user_id = #{applicantUserId}</if>
+        <if test="approverUserId != null">AND l.approver_user_id = #{approverUserId}</if>
+        <if test="leaveType != null and leaveType != ''">AND l.leave_type = #{leaveType}</if>
+        <if test="leaveStatus != null and leaveStatus != ''">AND l.leave_status = #{leaveStatus}</if>
+        <if test="leaveTitle != null and leaveTitle != ''">AND l.leave_title like concat('%', #{leaveTitle}, '%')</if>
+        <if test="params.beginTime != null and params.beginTime != ''">
+            AND date_format(l.create_time,'%Y%m%d') &gt;= date_format(#{params.beginTime},'%Y%m%d')
+        </if>
+        <if test="params.endTime != null and params.endTime != ''">
+            AND date_format(l.create_time,'%Y%m%d') &lt;= date_format(#{params.endTime},'%Y%m%d')
+        </if>
+        order by l.create_time desc
+    </select>
+
+    <select id="selectCampusLeaveApplyPage" resultMap="CampusLeaveApplyVoResult">
+        <include refid="selectCampusLeaveApplyVo"/>
+        where l.del_flag = '0'
+        <if test="leaveApply.applicantUserId != null">AND l.applicant_user_id = #{leaveApply.applicantUserId}</if>
+        <if test="leaveApply.approverUserId != null">AND l.approver_user_id = #{leaveApply.approverUserId}</if>
+        <if test="leaveApply.leaveType != null and leaveApply.leaveType != ''">AND l.leave_type = #{leaveApply.leaveType}</if>
+        <if test="leaveApply.leaveStatus != null and leaveApply.leaveStatus != ''">AND l.leave_status = #{leaveApply.leaveStatus}</if>
+        <if test="leaveApply.leaveTitle != null and leaveApply.leaveTitle != ''">AND l.leave_title like concat('%', #{leaveApply.leaveTitle}, '%')</if>
+        <if test="leaveApply.params.beginTime != null and leaveApply.params.beginTime != ''">
+            AND date_format(l.create_time,'%Y%m%d') &gt;= date_format(#{leaveApply.params.beginTime},'%Y%m%d')
+        </if>
+        <if test="leaveApply.params.endTime != null and leaveApply.params.endTime != ''">
+            AND date_format(l.create_time,'%Y%m%d') &lt;= date_format(#{leaveApply.params.endTime},'%Y%m%d')
+        </if>
+        order by l.create_time desc
+    </select>
+
+    <select id="selectCampusLeaveApplyById" parameterType="Long" resultMap="CampusLeaveApplyVoResult">
+        <include refid="selectCampusLeaveApplyVo"/>
+        where l.del_flag = '0' and l.leave_id = #{leaveId}
+    </select>
+
+    <insert id="insertCampusLeaveApply" parameterType="com.campus.system.domain.leave.CampusLeaveApply" useGeneratedKeys="true" keyProperty="leaveId">
+        insert into campus_leave_apply (
+            applicant_user_id, approver_user_id, leave_type, leave_title, leave_reason,
+            start_time, end_time, leave_days, leave_status, contact_phone,
+            create_by, create_time, remark
+        ) values (
+            #{applicantUserId}, #{approverUserId}, #{leaveType}, #{leaveTitle}, #{leaveReason},
+            #{startTime}, #{endTime}, #{leaveDays}, '0', #{contactPhone},
+            #{createBy}, sysdate(), #{remark}
+        )
+    </insert>
+
+    <update id="updateCampusLeaveApply" parameterType="com.campus.system.domain.leave.CampusLeaveApply">
+        update campus_leave_apply
+        <set>
+            <if test="leaveType != null and leaveType != ''">leave_type = #{leaveType},</if>
+            <if test="leaveTitle != null">leave_title = #{leaveTitle},</if>
+            <if test="leaveReason != null and leaveReason != ''">leave_reason = #{leaveReason},</if>
+            <if test="startTime != null">start_time = #{startTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="leaveDays != null">leave_days = #{leaveDays},</if>
+            <if test="contactPhone != null">contact_phone = #{contactPhone},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            update_by = #{updateBy},
+            update_time = sysdate()
+        </set>
+        where leave_id = #{leaveId}
+    </update>
+
+    <update id="deleteCampusLeaveApplyByIds">
+        update campus_leave_apply set del_flag = '2' where leave_id in
+        <foreach item="leaveId" collection="array" open="(" separator="," close=")">#{leaveId}</foreach>
+    </update>
+
+    <update id="approveCampusLeaveApply" parameterType="com.campus.system.domain.leave.CampusLeaveApply">
+        update campus_leave_apply
+        set leave_status = #{leaveStatus},
+            approver_user_id = #{approverUserId},
+            audit_remark = #{auditRemark},
+            audit_time = sysdate(),
+            update_by = #{updateBy},
+            update_time = sysdate()
+        where leave_id = #{leaveId}
+    </update>
+
+    <update id="revokeCampusLeaveApply">
+        update campus_leave_apply
+        set leave_status = '3',
+            revoke_time = sysdate(),
+            update_by = #{updateBy},
+            update_time = sysdate()
+        where leave_id = #{leaveId}
+    </update>
+
+</mapper>

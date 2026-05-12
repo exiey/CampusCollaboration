@@ -1,0 +1,89 @@
+2026-05-11T13:23:52.377+08:00  INFO 21620 --- [  restartedMain] com.campus.Application                   : Starting Application using Java 21.0.10 with PID 21620 (C:\Users\19092\Desktop\CampusCollaboration\campus-admin\target\classes started by 19092 in C:\Users\19092\Desktop\CampusCollaboration)
+2026-05-11T13:23:52.384+08:00  INFO 21620 --- [  restartedMain] com.campus.Application                   : The following 1 profile is active: "druid"
+2026-05-11T13:23:55.954+08:00  INFO 21620 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T13:23:55.954+08:00  INFO 21620 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2026-05-11T13:23:56.023+08:00  INFO 21620 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11T13:23:58.040+08:00  INFO 21620 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-05-11T13:24:01.362+08:00  INFO 21620 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2026-05-11T13:24:01.379+08:00  INFO 21620 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-11T13:24:01.380+08:00  INFO 21620 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2026-05-11T13:24:01.381+08:00  INFO 21620 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2026-05-11T13:24:01.382+08:00  INFO 21620 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-11T13:24:01.382+08:00  INFO 21620 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-11T13:24:01.382+08:00  INFO 21620 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2026-05-11T13:24:01.382+08:00  INFO 21620 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@468ee8a
+2026-05-11T13:24:03.175+08:00  INFO 21620 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-11T13:24:03.188+08:00  INFO 21620 --- [  restartedMain] com.campus.Application                   : Started Application in 11.583 seconds (process running for 12.757)
+2026-05-11T13:24:03.192+08:00  INFO 21620 --- [  restartedMain] com.campus.Application                   : CrazyLee started successfully. Local: http://localhost:8080
+2026-05-11T13:26:02.740+08:00  INFO 21620 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-11T13:26:16.497+08:00  INFO 21620 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[admin][Success][登录成功]
+2026-05-11T13:26:16.773+08:00  INFO 21620 --- [schedule-pool-0] n.b.parse.useragent.utils.YauaaVersion   : Yauaa 7.32.0 (v7.32.0 @ 2025-10-11T16:29:46Z)
+2026-05-11T13:26:17.157+08:00  INFO 21620 --- [schedule-pool-0] n.b.parse.useragent.config.ConfigLoader  : - Loaded 119 files in  363 ms using expression: classpath*:UserAgents/**/*.yaml
+2026-05-11T13:26:20.129+08:00  INFO 21620 --- [schedule-pool-0] n.b.p.u.a.UserAgentStringMatchMaker      : Building all needed matchers for the requested 11 fields.
+2026-05-11T13:26:20.172+08:00  INFO 21620 --- [nio-8080-exec-2] n.b.p.u.a.UserAgentStringMatchMaker      : Initializing Analyzer data structures
+2026-05-11T13:26:21.074+08:00  INFO 21620 --- [nio-8080-exec-2] n.b.p.u.a.UserAgentStringMatchMaker      : Built in 900 msec : Hashmap 197922, Ranges map:2964
+2026-05-11T13:27:01.258+08:00  INFO 21620 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[teacher01][Success][登录成功]
+2026-05-11T13:27:51.561+08:00  INFO 21620 --- [schedule-pool-1] sys-user                                 : [127.0.0.1]内网IP[teacher01][Logout][退出成功]
+2026-05-11T13:28:04.064+08:00  INFO 21620 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[teacher01][Success][登录成功]
+2026-05-11T13:28:41.838+08:00  INFO 21620 --- [schedule-pool-2] sys-user                                 : [127.0.0.1]内网IP[teacher01][Logout][退出成功]
+2026-05-11T13:28:52.158+08:00  INFO 21620 --- [schedule-pool-1] sys-user                                 : [127.0.0.1]内网IP[teacher01][Success][登录成功]
+2026-05-11T13:28:59.524+08:00  INFO 21620 --- [schedule-pool-3] sys-user                                 : [127.0.0.1]内网IP[teacher01][Logout][退出成功]
+2026-05-11T13:29:10.959+08:00  INFO 21620 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[teacher01][Success][登录成功]
+2026-05-11T13:31:20.879+08:00  INFO 21620 --- [schedule-pool-4] sys-user                                 : [127.0.0.1]内网IP[teacher01][Logout][退出成功]
+2026-05-11T13:31:33.956+08:00  INFO 21620 --- [schedule-pool-2] sys-user                                 : [127.0.0.1]内网IP[teacher01][Success][登录成功]
+2026-05-11T13:32:01.016+08:00  INFO 21620 --- [schedule-pool-5] sys-user                                 : [127.0.0.1]内网IP[teacher01][Logout][退出成功]
+2026-05-11T13:32:21.603+08:00  INFO 21620 --- [schedule-pool-1] sys-user                                 : [127.0.0.1]内网IP[student01][Success][登录成功]
+2026-05-11T13:35:04.310+08:00  INFO 21620 --- [schedule-pool-3] sys-user                                 : [127.0.0.1]内网IP[student01][Logout][退出成功]
+2026-05-11T13:35:17.336+08:00  INFO 21620 --- [schedule-pool-7] sys-user                                 : [127.0.0.1]内网IP[student01][Success][登录成功]
+2026-05-11T13:35:21.247+08:00  INFO 21620 --- [schedule-pool-0] sys-user                                 : [127.0.0.1]内网IP[student01][Logout][退出成功]
+2026-05-11T13:35:40.838+08:00  INFO 21620 --- [schedule-pool-8] sys-user                                 : [127.0.0.1]内网IP[teacher01][Success][登录成功]
+2026-05-11T13:40:07.237+08:00  INFO 21620 --- [schedule-pool-4] sys-user                                 : [127.0.0.1]内网IP[admin][Logout][退出成功]
+2026-05-11T13:40:36.717+08:00  INFO 21620 --- [schedule-pool-9] sys-user                                 : [127.0.0.1]内网IP[teacher01][Success][登录成功]
+2026-05-11T13:42:32.136+08:00  INFO 21620 --- [chedule-pool-10] sys-user                                 : [127.0.0.1]内网IP[teacher01][Logout][退出成功]
+2026-05-11T13:42:59.521+08:00  INFO 21620 --- [schedule-pool-5] sys-user                                 : [127.0.0.1]内网IP[admin][Success][登录成功]
+2026-05-11T13:43:08.677+08:00  INFO 21620 --- [chedule-pool-11] sys-user                                 : [127.0.0.1]内网IP[admin][Logout][退出成功]
+2026-05-11T13:43:45.990+08:00  INFO 21620 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-11T13:43:46.038+08:00  INFO 21620 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-11T13:43:46.038+08:00  INFO 21620 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-11T13:43:46.038+08:00  INFO 21620 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-11T13:43:46.039+08:00  INFO 21620 --- [ionShutdownHook] sys-user                                 : ====关闭后台任务任务线程池====
+2026-05-11T13:43:46.041+08:00  INFO 21620 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2026-05-11T13:43:46.045+08:00  INFO 21620 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2026-05-11T14:21:13.465+08:00  INFO 20564 --- [  restartedMain] com.campus.Application                   : Starting Application using Java 21.0.10 with PID 20564 (C:\Users\19092\Desktop\CampusCollaboration\campus-admin\target\classes started by 19092 in C:\Users\19092\Desktop\CampusCollaboration)
+2026-05-11T14:21:13.467+08:00  INFO 20564 --- [  restartedMain] com.campus.Application                   : The following 1 profile is active: "druid"
+2026-05-11T14:21:16.108+08:00  INFO 20564 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-11T14:21:16.109+08:00  INFO 20564 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2026-05-11T14:21:16.163+08:00  INFO 20564 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-11T14:21:17.479+08:00  INFO 20564 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2026-05-11T14:21:20.472+08:00  INFO 20564 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2026-05-11T14:21:20.484+08:00  INFO 20564 --- [  restartedMain] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2026-05-11T14:21:20.485+08:00  INFO 20564 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Quartz Scheduler v2.5.1 created.
+2026-05-11T14:21:20.486+08:00  INFO 20564 --- [  restartedMain] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2026-05-11T14:21:20.487+08:00  INFO 20564 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.5.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2026-05-11T14:21:20.487+08:00  INFO 20564 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2026-05-11T14:21:20.488+08:00  INFO 20564 --- [  restartedMain] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.5.1
+2026-05-11T14:21:20.488+08:00  INFO 20564 --- [  restartedMain] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@13e0a49e
+2026-05-11T14:21:22.152+08:00  INFO 20564 --- [  restartedMain] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2026-05-11T14:21:22.160+08:00  INFO 20564 --- [  restartedMain] com.campus.Application                   : Started Application in 9.28 seconds (process running for 9.971)
+2026-05-11T14:21:22.163+08:00  INFO 20564 --- [  restartedMain] com.campus.Application                   : CrazyLee started successfully. Local: http://localhost:8080
+2026-05-11T14:21:54.442+08:00  INFO 20564 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-11T14:21:54.475+08:00  INFO 20564 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2026-05-11T14:21:54.475+08:00  INFO 20564 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2026-05-11T14:21:54.475+08:00  INFO 20564 --- [ionShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2026-05-11T14:21:54.476+08:00  INFO 20564 --- [ionShutdownHook] sys-user                                 : ====关闭后台任务任务线程池====
+2026-05-11T14:21:54.482+08:00  INFO 20564 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2026-05-11T14:21:54.489+08:00  INFO 20564 --- [ionShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

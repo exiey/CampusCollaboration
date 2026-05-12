@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.campus.system.mapper.dashboard.CampusDashboardMapper">
+
+    <select id="countUserTotal" resultType="Long">
+        select count(*) from sys_user where del_flag = '0' and status = '0'
+    </select>
+
+    <select id="countTaskTotal" resultType="Long">
+        select count(*) from campus_task where del_flag = '0'
+        <if test="publishUserId != null">AND publish_user_id = #{publishUserId}</if>
+    </select>
+
+    <select id="countPendingLeaveTotal" resultType="Long">
+        select count(*) from campus_leave_apply where del_flag = '0' and leave_status = '0'
+        <if test="approverUserId != null">AND approver_user_id = #{approverUserId}</if>
+    </select>
+
+    <select id="countFileTotal" resultType="Long">
+        select count(*) from campus_shared_file where del_flag = '0'
+        <if test="uploadUserId != null">AND upload_user_id = #{uploadUserId}</if>
+    </select>
+
+    <select id="selectTaskStatusStats" resultType="java.util.HashMap">
+        select t.task_status as name, count(*) as value
+        from campus_task t
+        where t.del_flag = '0'
+        <if test="publishUserId != null">AND t.publish_user_id = #{publishUserId}</if>
+        <if test="receiveUserId != null">AND t.receive_user_id = #{receiveUserId}</if>
+        group by t.task_status
+    </select>
+
+    <select id="selectTaskTrend" resultType="java.util.HashMap">
+        select date_format(t.create_time, '%m-%d') as name, count(*) as value
+        from campus_task t
+        where t.del_flag = '0'
+          and t.create_time &gt;= date_sub(curdate(), interval 7 day)
+        <if test="publishUserId != null">AND t.publish_user_id = #{publishUserId}</if>
+        group by date_format(t.create_time, '%m-%d')
+        order by name asc
+    </select>
+
+    <select id="selectRoleStats" resultType="java.util.HashMap">
+        select r.role_name as name, count(ur.user_id) as value
+        from sys_role r
+        left join sys_user_role ur on r.role_id = ur.role_id
+        left join sys_user u on ur.user_id = u.user_id and u.del_flag = '0'
+        where r.del_flag = '0' and r.status = '0'
+        group by r.role_id, r.role_name
+        order by value desc
+    </select>
+
+    <select id="selectLeaveStatusStats" resultType="java.util.HashMap">
+        select l.leave_status as name, count(*) as value
+        from campus_leave_apply l
+        where l.del_flag = '0'
+        group by l.leave_status
+    </select>
+
+    <select id="selectApprovalTrend" resultType="java.util.HashMap">
+        select date_format(l.audit_time, '%m-%d') as date,
+               sum(case when l.leave_status = '1' then 1 else 0 end) as approved,
+               sum(case when l.leave_status = '2' then 1 else 0 end) as rejected
+        from campus_leave_apply l
+        where l.del_flag = '0'
+          and l.leave_status in ('1', '2')
+          and l.audit_time &gt;= date_sub(curdate(), interval 7 day)
+        <if test="approverUserId != null">AND l.approver_user_id = #{approverUserId}</if>
+        group by date_format(l.audit_time, '%m-%d')
+        order by date asc
+    </select>
+
+    <select id="selectRecentTaskList" resultType="com.campus.system.domain.vo.CampusTaskVo">
+        select t.task_id, t.task_title, t.task_status, t.priority, t.deadline_time, t.create_time,
+               pu.nick_name as publish_user_name, ru.nick_name as receive_user_name
+        from campus_task t
+        left join sys_user pu on t.publish_user_id = pu.user_id
+        left join sys_user ru on t.receive_user_id = ru.user_id
+        where t.del_flag = '0'
+        <if test="publishUserId != null">AND t.publish_user_id = #{publishUserId}</if>
+        order by t.create_time desc
+        limit 5
+    </select>
+
+    <select id="selectRecentLeaveList" resultType="com.campus.system.domain.vo.CampusLeaveApplyVo">
+        select l.leave_id, l.leave_title, l.leave_type, l.leave_status, l.leave_days,
+               l.start_time, l.end_time, l.create_time,
+               au.nick_name as applicant_user_name, ad.dept_name as applicant_dept_name
+        from campus_leave_apply l
+        left join sys_user au on l.applicant_user_id = au.user_id
+        left join sys_dept ad on au.dept_id = ad.dept_id
+        where l.del_flag = '0'
+        <if test="approverUserId != null">AND l.approver_user_id = #{approverUserId}</if>
+        order by l.create_time desc
+        limit 5
+    </select>
+
+    <select id="selectPendingLeaveList" resultType="com.campus.system.domain.vo.CampusLeaveApplyVo">
+        select l.leave_id, l.leave_title, l.leave_type, l.leave_status, l.leave_days,
+               l.start_time, l.end_time, l.create_time,
+               au.nick_name as applicant_user_name, ad.dept_name as applicant_dept_name
+        from campus_leave_apply l
+        left join sys_user au on l.applicant_user_id = au.user_id
+        left join sys_dept ad on au.dept_id = ad.dept_id
+        where l.del_flag = '0' and l.leave_status = '0'
+        <if test="approverUserId != null">AND l.approver_user_id = #{approverUserId}</if>
+        order by l.create_time desc
+        limit 10
+    </select>
+
+    <select id="selectRecentCommentList" resultType="com.campus.system.domain.vo.CampusTaskCommentVo">
+        select c.comment_id, c.task_id, c.comment_content, c.create_time,
+               cu.nick_name as comment_user_name, cu.avatar as comment_user_avatar
+        from campus_task_comment c
+        left join sys_user cu on c.comment_user_id = cu.user_id
+        left join campus_task t on c.task_id = t.task_id
+        where c.del_flag = '0' and t.del_flag = '0'
+        <if test="publishUserId != null">AND t.publish_user_id = #{publishUserId}</if>
+        order by c.create_time desc
+        limit 5
+    </select>
+
+</mapper>
